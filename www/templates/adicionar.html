@@ -1,0 +1,22 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-positive">
+		<h1 ng-if="!editando" class="title">Novo Produto</h1>
+		<h1 ng-if="editando" class="title">Editando Produto</h1>
+		<button class="button button-clear button-primary" ng-click="modal.hide()">Cancelar</button>
+	</ion-header-bar>
+	<ion-content>
+		<div class="list">
+			<label class="item item-input">
+				<input type="text" ng-model="Produto.titulo" placeholder="Título">
+			</label>
+			<label class="item item-input">
+				<input type="text" ng-model="Produto.valor" placeholder="R$">
+			</label>
+			<ion-list>
+				<ion-checkbox ng-model="Produto.publicar">Publicado</ion-checkbox>
+			</ion-list>
+			<button ng-if="!editando" ng-click="addProduto(Produto)" class="button button-full button-positive">Adicionar</button>
+			<button ng-if="editando" ng-click="salvarProduto(Produto)" class="button button-full button-positive">Salvar</button>
+		</div>
+	</ion-content>
+</ion-modal-view>
